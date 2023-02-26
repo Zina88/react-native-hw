@@ -38,8 +38,8 @@ export default function App() {
           style={styles.image}
           source={require('./assets/img/wallpaper.jpg')}
         >
-          <RegistrationScreen />
-          {/* <LoginScreen />  */}
+          {/* <RegistrationScreen /> */}
+          <LoginScreen /> 
         </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
