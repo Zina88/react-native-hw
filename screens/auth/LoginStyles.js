@@ -2,38 +2,24 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: Dimensions.get('window').height / 3 - 549,
+    flex: Dimensions.get('window').height / 3 - 489,
     backgroundColor: '#ffffff',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     position: 'relative',
   },
 
-  photoWrapper: {
-    backgroundColor: '#F6F6F6',
-    width: 120,
-    height: 120,
-    borderRadius: 16,
-    position: 'absolute',
-    right: Dimensions.get('window').width / 2 - 60,
-    top: -60,
-    width: 120,
-    height: 120,
-    backgroundColor: '#F6F6F6',
-    borderRadius: 16,
+  // container: {
+  //   flex: 1,
+  // },
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'flex-end',
   },
-
-  addImg: {
-    width: 25,
-    height: 25,
-    position: 'absolute',
-    top: 21,
-    right: Dimensions.get('window').width / 2 - 72.5,
-  },
-
   header: {
     alignItems: 'center',
-    marginTop: 92,
+    marginTop: 32,
     marginBottom: 32,
   },
 
@@ -44,7 +30,7 @@ export const styles = StyleSheet.create({
   },
 
   form: {
-    marginBottom: 78,
+    marginBottom: 144,
   },
 
   input: {

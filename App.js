@@ -1,20 +1,17 @@
-import React, { useCallback } from 'react';
-import {
-  StyleSheet,
-  ImageBackground,
-  View,
-  Keyboard,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import React, { useCallback, useState, useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { NavigationContainer } from '@react-navigation/native';
 
-import RegistrationScreen from './Screens/RegistarationScreen';
-import LoginScreen from './Screens/LoginScreen';
+import { useRoute } from './router';
+// const screenDimensions = Dimensions.get('window').height;
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  // const [dimensionsHeigth, setDimensionsHeigth] = useState(screenDimensions);
+  const routing = useRoute({});
   const [fontsLoaded] = useFonts({
     'Roboto-Regular': require('./assets/fonts/Roboto/Roboto-Regular.ttf'),
     'Roboto-Medium': require('./assets/fonts/Roboto/Roboto-Medium.ttf'),
@@ -32,17 +29,9 @@ export default function App() {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View style={styles.container} onLayout={onLayoutRootView}>
-        <ImageBackground
-          style={styles.image}
-          source={require('./assets/img/wallpaper.jpg')}
-        >
-          {/* <RegistrationScreen /> */}
-          <LoginScreen /> 
-        </ImageBackground>
-      </View>
-    </TouchableWithoutFeedback>
+    <View style={styles.container} onLayout={onLayoutRootView}>
+      <NavigationContainer>{routing}</NavigationContainer>
+    </View>
   );
 }
 
